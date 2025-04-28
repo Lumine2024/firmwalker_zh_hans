@@ -1,43 +1,43 @@
-# firmwalker
-Ò»¸ö¼òµ¥µÄbash½Å±¾£¬ÓÃÓÚËÑË÷ÌáÈ¡»ò¹ÒÔØµÄ¹Ì¼şÎÄ¼şÏµÍ³¡£
+# firmwalker æ±‰åŒ–ç‰ˆ
+ä¸€ä¸ªç®€å•çš„bashè„šæœ¬ï¼Œç”¨äºæœç´¢æå–æˆ–æŒ‚è½½çš„å›ºä»¶æ–‡ä»¶ç³»ç»Ÿã€‚
 
-Ëü½«ÔÚÌáÈ¡»ò¹ÒÔØµÄ¹Ì¼şÎÄ¼şÏµÍ³ÖĞËÑË÷¸ĞĞËÈ¤µÄ¶«Î÷£¬ÀıÈç£º
+å®ƒå°†åœ¨æå–æˆ–æŒ‚è½½çš„å›ºä»¶æ–‡ä»¶ç³»ç»Ÿä¸­æœç´¢æ„Ÿå…´è¶£çš„ä¸œè¥¿ï¼Œä¾‹å¦‚ï¼š
 
-* etc/shadowºÍetc/passwd
-* ÁĞ³öetc/sslÄ¿Â¼
-* ËÑË÷SSLÏà¹ØÎÄ¼ş£¬Èç.pem£¬.crtµÈ¡£
-* ËÑË÷ÅäÖÃÎÄ¼ş
-* ²éÕÒ½Å±¾ÎÄ¼ş
-* ËÑË÷ÆäËû.binÎÄ¼ş
-* ²éÕÒ¹Ø¼ü×Ö£¬Èçadmin£¬ password£¬ remoteµÈ¡£
-* ËÑË÷ÎïÁªÍøÉè±¸ÉÏÊ¹ÓÃµÄ³£ÓÃweb·şÎñÆ÷
-* ËÑË÷³£ÓÃµÄ¶ş½øÖÆÎÄ¼ş£¬Èçssh£¬ tftp£¬ dropbearµÈ¡£
-* ËÑË÷url£¬µç×ÓÓÊ¼şµØÖ·ºÍIPµØÖ·
-* ÊµÑéĞÔÖ§³ÖÊ¹ÓÃShodan CLIµ÷ÓÃShodan API
+* etc/shadowå’Œetc/passwd
+* åˆ—å‡ºetc/sslç›®å½•
+* æœç´¢SSLç›¸å…³æ–‡ä»¶ï¼Œå¦‚.pemï¼Œ.crtç­‰ã€‚
+* æœç´¢é…ç½®æ–‡ä»¶
+* æŸ¥æ‰¾è„šæœ¬æ–‡ä»¶
+* æœç´¢å…¶ä»–.binæ–‡ä»¶
+* æŸ¥æ‰¾å…³é”®å­—ï¼Œå¦‚adminï¼Œ passwordï¼Œ remoteç­‰ã€‚
+* æœç´¢ç‰©è”ç½‘è®¾å¤‡ä¸Šä½¿ç”¨çš„å¸¸ç”¨webæœåŠ¡å™¨
+* æœç´¢å¸¸ç”¨çš„äºŒè¿›åˆ¶æ–‡ä»¶ï¼Œå¦‚sshï¼Œ tftpï¼Œ dropbearç­‰ã€‚
+* æœç´¢urlï¼Œç”µå­é‚®ä»¶åœ°å€å’ŒIPåœ°å€
+* å®éªŒæ€§æ”¯æŒä½¿ç”¨Shodan CLIè°ƒç”¨Shodan API
 
-## Ê¹ÓÃ
-* Èç¹ûÄãÏëÊ¹ÓÃ½Å±¾µÄ¾²Ì¬´úÂë·ÖÎö²¿·Ö£¬Çë°²×°eslint: 
-* `npm i -g eslint ./firmwalker {Ô´ÎÄ¼şÏµÍ³Â·¾¶} {firmwalker.txtµÄÂ·¾¶}`
-* ÀıÈç£º`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
-* ÎÄ¼ş`firmwalker.txt`½«±»´´½¨ÔÚÓë½Å±¾ÎÄ¼şÏàÍ¬µÄÄ¿Â¼ÏÂ£¬³ı·ÇÄãÖ¸¶¨Ò»¸ö²»Í¬µÄÎÄ¼şÃû×÷ÎªµÚ¶ş¸ö²ÎÊı
-* ²»Òª°Ñ`firmwalker.sh`ÎÄ¼ş·ÅÔÚÒªËÑË÷µÄÄ¿Â¼ÖĞ£¬Õâ»áµ¼ÖÂ½Å±¾ËÑË÷×Ô¼ººÍËüÕıÔÚ´´½¨µÄÎÄ¼ş
+## ä½¿ç”¨
+* å¦‚æœä½ æƒ³ä½¿ç”¨è„šæœ¬çš„é™æ€ä»£ç åˆ†æéƒ¨åˆ†ï¼Œè¯·å®‰è£…eslint: 
+* `npm i -g eslint ./firmwalker {æºæ–‡ä»¶ç³»ç»Ÿè·¯å¾„} {firmwalker.txtçš„è·¯å¾„}`
+* ä¾‹å¦‚ï¼š`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
+* æ–‡ä»¶`firmwalker.txt`å°†è¢«åˆ›å»ºåœ¨ä¸è„šæœ¬æ–‡ä»¶ç›¸åŒçš„ç›®å½•ä¸‹ï¼Œé™¤éä½ æŒ‡å®šä¸€ä¸ªä¸åŒçš„æ–‡ä»¶åä½œä¸ºç¬¬äºŒä¸ªå‚æ•°
+* ä¸è¦æŠŠ`firmwalker.sh`æ–‡ä»¶æ”¾åœ¨è¦æœç´¢çš„ç›®å½•ä¸­ï¼Œè¿™ä¼šå¯¼è‡´è„šæœ¬æœç´¢è‡ªå·±å’Œå®ƒæ­£åœ¨åˆ›å»ºçš„æ–‡ä»¶
 * `chmod 0700 firmwalker.sh`
 
-## ÈçºÎÀ©Õ¹
-* ²é¿´`data`ÏÂµÄ¼ì²é»òÌí¼Óeslint¹æÔò µ½eslintrc.json
-* eslint¹æÔò£ºhttp://eslint.org/docs/rules/
+## å¦‚ä½•æ‰©å±•
+* æŸ¥çœ‹`data`ä¸‹çš„æ£€æŸ¥æˆ–æ·»åŠ eslintè§„åˆ™ åˆ°eslintrc.json
+* eslintè§„åˆ™ï¼šhttp://eslint.org/docs/rules/
 
-## Ê¾ÀıÎÄ¼ş
+## ç¤ºä¾‹æ–‡ä»¶
 - https://1drv.ms/f/s!AucQMYXJNefdvGZyeYt16H72VCLv
-* squashfs-root.zip - °üº¬Ëæ»úÌáÈ¡µÄÂ·ÓÉÆ÷¹Ì¼şÎÄ¼ş¡£Firmwalker¿ÉÒÔÔÚÕâ¸öÎÄ¼şÏµÍ³ÉÏÔËĞĞ¡£
-* rt-ac66u.txt - firmwalkerÊä³öÎÄ¼ş
-* xc.txt - UbiquitiÉè±¸µÄfirmwalkerÊä³öÎÄ¼ş
+* squashfs-root.zip - åŒ…å«éšæœºæå–çš„è·¯ç”±å™¨å›ºä»¶æ–‡ä»¶ã€‚Firmwalkerå¯ä»¥åœ¨è¿™ä¸ªæ–‡ä»¶ç³»ç»Ÿä¸Šè¿è¡Œã€‚
+* rt-ac66u.txt - firmwalkerè¾“å‡ºæ–‡ä»¶
+* xc.txt - Ubiquitiè®¾å¤‡çš„firmwalkerè¾“å‡ºæ–‡ä»¶
 
-### ÓÉCraig Smith´´½¨²¢À©Õ¹µÄ½Å±¾£º
+### ç”±Craig Smithåˆ›å»ºå¹¶æ‰©å±•çš„è„šæœ¬ï¼š
 * Athanasios Kostopoulos
 * misterch0c
 
-### Á´½Ó
+### é“¾æ¥
 * https://craigsmith.net
 * https://woktime.wordpress.com
 * https://www.owasp.org/index.php/OWASP_Internet_of_Things_Project#tab=Firmware_Analysis
