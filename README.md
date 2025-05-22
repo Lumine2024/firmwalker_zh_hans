@@ -1,10 +1,10 @@
 # firmwalker
 一个简单的bash脚本，用于搜索提取或挂载的固件文件系统。
 
-它将在提取或挂载的固件文件系统中搜索感兴趣的东西，例如：
+它将在提取或挂载的固件文件系统中搜索可能引发固件不安全问题的东西，例如：
 
 * etc/shadow和etc/passwd
-* 列出etc/ssl目录
+* etc/ssl目录
 * 搜索SSL相关文件，如.pem，.crt等。
 * 搜索配置文件
 * 查找脚本文件
@@ -23,7 +23,7 @@
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
 * `chmod +x firmwalker.sh`
 
-## 如何扩展
+## 如何添加扩展
 * 查看`data`下的检查或添加eslint规则 到eslintrc.json
 * eslint规则：http://eslint.org/docs/rules/
 
