@@ -12,13 +12,13 @@ namespace fs = std::filesystem;
 
 int main(int argc, char *argv[]) {
 	if(argc > 3 || argc < 2) {
-		cout << "Ê¹ÓÃ·½·¨\n" << argv[0] << " + ÊäÈëÎÄ¼ş + [¿ÉÑ¡£ºÊä³öÎÄ¼ş£¬Ä¬ÈÏfirmwalker.txt]" << endl;
+		cout << "ä½¿ç”¨æ–¹æ³•\n" << argv[0] << " + è¾“å…¥æ–‡ä»¶ + [å¯é€‰ï¼šè¾“å‡ºæ–‡ä»¶ï¼Œé»˜è®¤firmwalker.txt]" << endl;
 		return 1;
 	}
 	string firmdir = argv[1];
 	string output_file = (argc == 3) ? argv[2] : "firmwalker.txt";
 	if(!fs::exists(firmdir)) {
-		cout << "ÊäÈëµÄÎÄ¼ş¼Ğ²»´æÔÚ" << endl;
+		cout << "è¾“å…¥çš„æ–‡ä»¶å¤¹ä¸å­˜åœ¨" << endl;
 		return 1;
 	}
 	ofstream out(output_file);
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 		vector<string> ret;
 		ifstream in(path);
 		if(!in.is_open()) {
-			msg("ÎŞ·¨´ò¿ªÎÄ¼ş: " + path);
+			msg("æ— æ³•æ‰“å¼€æ–‡ä»¶: " + path);
 			return ret;
 		}
 		string line;
@@ -40,9 +40,10 @@ int main(int argc, char *argv[]) {
 		in.close();
 		return ret;
 	};
-	msg("***¹Ì¼şµØÖ·***");
+	msg("------------firmwalker---------------");
+	msg("***å›ºä»¶åœ°å€***");
 	msg(firmdir);
-	msg("****ÕıÔÚËÑË÷ÃÜÂëÎÄ¼ş***");
+	msg("****æ­£åœ¨æœç´¢å¯†ç æ–‡ä»¶***");
 	auto passfiles = getArray("data/passfiles");
 	for(auto &passfile : passfiles) {
 		msg("############################################# " + passfile);
@@ -54,8 +55,8 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	// Ìø¹ıSSLÏà¹ØÎÄ¼ş
-	msg("***ÕıÔÚËÑË÷SSHÏà¹ØÎÄ¼ş***");
+	// è·³è¿‡SSLç›¸å…³æ–‡ä»¶
+	msg("***æ­£åœ¨æœç´¢SSHç›¸å…³æ–‡ä»¶***");
 	auto sshfiles = getArray("data/sshfiles");
 	for(auto &sshfile : sshfiles) {
 		msg("############################################# " + sshfile);
@@ -67,7 +68,7 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷filesÎÄ¼ş¼Ğ***");
+	msg("***æ­£åœ¨æœç´¢filesæ–‡ä»¶å¤¹***");
 	auto files = getArray("data/files");
 	for(auto &file : sshfiles) {
 		msg("############################################# " + file);
@@ -80,7 +81,7 @@ int main(int argc, char *argv[]) {
 	}
 	msg("");
 
-	msg("***ÕıÔÚËÑË÷Êı¾İ¿âÎÄ¼ş***");
+	msg("***æ­£åœ¨æœç´¢æ•°æ®åº“æ–‡ä»¶***");
 	auto dbfiles = getArray("data/dbfiles");
 	for(auto &dbfile : dbfiles) {
 		msg("############################################# " + dbfile);
@@ -92,23 +93,23 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷shell½Å±¾***");
-	msg("############################################# " "shell½Å±¾");
+	msg("***æ­£åœ¨æœç´¢shellè„šæœ¬***");
+	msg("############################################# " "shellè„šæœ¬");
 	for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
 		if(entry.path().extension() == ".sh") {
 			msg(entry.path().string());
 		}
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷ÆäËû.binÎÄ¼ş***");
-	msg("############################################# " "ÆäËû.binÎÄ¼ş");
+	msg("***æ­£åœ¨æœç´¢å…¶ä»–.binæ–‡ä»¶***");
+	msg("############################################# " "å…¶ä»–.binæ–‡ä»¶");
 	for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
 		if(entry.path().extension() == ".bin") {
 			msg(entry.path().string());
 		}
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷ÎÄ¼şÑùÊ½***");
+	msg("***æ­£åœ¨æœç´¢æ–‡ä»¶æ ·å¼***");
 	auto patterns = getArray("data/patterns");
 	for(auto &pattern : patterns) {
 		msg("-----------------" + pattern + "-----------------");
@@ -128,8 +129,8 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷ÍøÂç·şÎñÆ÷***");
-	msg("############################################# " "ÍøÂç·şÎñÆ÷");
+	msg("***æ­£åœ¨æœç´¢ç½‘ç»œæœåŠ¡å™¨***");
+	msg("############################################# " "ç½‘ç»œæœåŠ¡å™¨");
 	auto webservers = getArray("data/webservers");
 	for(auto &webserver : webservers) {
 		msg("############################################# " + webserver);
@@ -141,8 +142,8 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷ÖØÒª¶ş½øÖÆÎÄ¼ş***");
-	msg("############################################# " "ÖØÒª¶ş½øÖÆÎÄ¼ş");
+	msg("***æ­£åœ¨æœç´¢é‡è¦äºŒè¿›åˆ¶æ–‡ä»¶***");
+	msg("############################################# " "é‡è¦äºŒè¿›åˆ¶æ–‡ä»¶");
 	auto binaries = getArray("data/binaries");
 	for(auto &binary : binaries) {
 		msg("############################################# " + binary);
@@ -154,8 +155,8 @@ int main(int argc, char *argv[]) {
 		msg("");
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷IPµØÖ·***");
-	msg("############################################# IPµØÖ·");
+	msg("***æ­£åœ¨æœç´¢IPåœ°å€***");
+	msg("############################################# IPåœ°å€");
 	regex ip_regex(R"(\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)");
 	set<string> ip_set;
 	for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
@@ -176,7 +177,7 @@ int main(int argc, char *argv[]) {
 		msg(ip);
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷URL***");
+	msg("***æ­£åœ¨æœç´¢URL***");
 	msg("############################################# " "URL");
 	regex url_regex(R"((http|https)://[^/"]+)");
 	set<string> url_set;
@@ -198,8 +199,8 @@ int main(int argc, char *argv[]) {
 		msg(url);
 	}
 	msg("");
-	msg("***ÕıÔÚËÑË÷ÓÊÏä***");
-	msg("############################################# " "ÓÊÏä");
+	msg("***æ­£åœ¨æœç´¢é‚®ç®±***");
+	msg("############################################# " "é‚®ç®±");
 	regex email_regex(R"(([[:alnum:]_.-]+@[[:alnum:]_.-]+?\.[[:alpha:].]{2,6}))");
 	set<string> email_set;
 	for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
@@ -220,6 +221,6 @@ int main(int argc, char *argv[]) {
 		msg(email);
 	}
 	msg("");
-	msg("ËÑË÷Íê±Ï");
+	msg("æœç´¢å®Œæ¯•");
 	return 0;
 }
