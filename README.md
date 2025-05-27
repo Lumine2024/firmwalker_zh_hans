@@ -16,12 +16,11 @@
 * 实验性支持使用Shodan CLI调用Shodan API
 
 ## 使用
-* 如果你想使用脚本的静态代码分析部分，请安装eslint:
-* `npm i -g eslint ./firmwalker {源文件系统路径} {firmwalker.txt的路径}`
-* 例如：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
+* 使用方法：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
+* 如果打不开，请执行`chmod +x firmwalker.sh`
 * 文件`firmwalker.txt`将被创建在与脚本文件相同的目录下，除非你指定一个不同的文件名作为第二个参数
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
-* `chmod +x firmwalker.sh`
+* 如果你想使用脚本的静态代码分析部分，请安装eslint: `npm i -g eslint ./firmwalker {源文件系统路径} {firmwalker.txt的路径}`
 
 ## 如何添加扩展
 * 查看`data`下的检查或添加eslint规则 到eslintrc.json
@@ -37,7 +36,7 @@
 * Athanasios Kostopoulos
 * misterch0c
 
-### 链接
+链接
 * https://craigsmith.net
 * https://woktime.wordpress.com
 * https://www.owasp.org/index.php/OWASP_Internet_of_Things_Project#tab=Firmware_Analysis
