@@ -32,7 +32,7 @@
       ./firmwalker linksys/fmk/rootfs ../firmwalker.txt
       ```
   * 跑可执行文件时，第二个参数为可选项，默认为`firmwalker.txt`
-* 如果打不开，请执行`chmod +x firmwalker.sh/firmwalker`（或`firmwalker`）
+* 如果打不开，请执行`chmod +x firmwalker.sh`
 * 除非你指定一个不同的文件名作为第二个参数，否则文件`firmwalker.txt`将被创建在与脚本文件相同的目录下
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
 
