@@ -13,30 +13,28 @@
 * 搜索物联网设备上使用的常用web服务器
 * 搜索常用的二进制文件，如ssh， tftp， dropbear等。
 * 搜索url，电子邮件地址和IP地址
-* 实验性支持使用Shodan CLI调用Shodan API
 
 ## 使用
-* 使用方法：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
-* 如果打不开，请执行`chmod +x firmwalker.sh`
-* 文件`firmwalker.txt`将被创建在与脚本文件相同的目录下，除非你指定一个不同的文件名作为第二个参数
+* 使用方法：
+  * shell版：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
+  * c++版：（c++标准至少要在c++17，否则`filesystem`库没法用）
+    ```bat
+    g++ -std=c++23 firmwalker.cpp -o exec
+    ./exec linksys/fmk/rootfs ../firmwalker.txt
+    ```
+  * 第二个参数为可选项，默认为`firmwalker.txt`
+* 如果打不开，请执行`chmod +x firmwalker.sh`（或`chmod +x exec`）
+* 除非你指定一个不同的文件名作为第二个参数，否则文件`firmwalker.txt`将被创建在与脚本文件相同的目录下
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
-* 如果你想使用脚本的静态代码分析部分，请安装eslint: `npm i -g eslint ./firmwalker {源文件系统路径} {firmwalker.txt的路径}`
-
-## 如何添加扩展
-* 查看`data`下的检查或添加eslint规则 到eslintrc.json
-* eslint规则：http://eslint.org/docs/rules/
 
 ## 示例文件
 - https://1drv.ms/f/s!AucQMYXJNefdvGZyeYt16H72VCLv
+它包含以下内容：
 * squashfs-root.zip - 包含随机提取的路由器固件文件。Firmwalker可以在这个文件系统上运行。
 * rt-ac66u.txt - firmwalker输出文件
 * xc.txt - Ubiquiti设备的firmwalker输出文件
 
-### 由Craig Smith创建并扩展的脚本：
-* Athanasios Kostopoulos
-* misterch0c
-
-链接
+### 相关链接
 * https://craigsmith.net
 * https://woktime.wordpress.com
 * https://www.owasp.org/index.php/OWASP_Internet_of_Things_Project#tab=Firmware_Analysis
