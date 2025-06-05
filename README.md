@@ -40,9 +40,9 @@
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
 
 ## 示例文件
-![firmwalker.txt](https://github.com/Lumine2024/firmwalker_zh_hans/blob/master/firmwalker.txt)
+[firmwalker.txt](https://github.com/Lumine2024/firmwalker_zh_hans/blob/master/firmwalker.txt)
 
-上述是使用g++编译C++版本的脚本后跑的![IoTGoat](https://github.com/OWASP/IoTGoat)，和使用原始脚本跑的结果基本一致，但完成了汉化工作
+上述是使用g++编译C++版本的脚本后跑的[IoTGoat](https://github.com/OWASP/IoTGoat)，和使用原始脚本跑的结果基本一致，但完成了汉化工作
 
 ### 相关链接
 * https://craigsmith.net
