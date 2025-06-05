@@ -16,8 +16,11 @@
 
 ## 使用
 * 使用方法：
-  * shell版：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
-  * c++版：（c++标准至少要在c++17，否则`filesystem`库没法用）
+  * shell版：
+    ```shell
+    ./firmwalker linksys/fmk/rootfs ../firmwalker.txt
+    ```
+  * c++版：（c++标准至少要在C++17，否则`filesystem`库没法用）
     * 直接编译源文件：
       ```shell
       g++ -std=c++23 firmwalker.cpp -o firmwalker
@@ -37,11 +40,9 @@
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
 
 ## 示例文件
-- https://1drv.ms/f/s!AucQMYXJNefdvGZyeYt16H72VCLv
-它包含以下内容：
-* squashfs-root.zip - 包含随机提取的路由器固件文件。Firmwalker可以在这个文件系统上运行。
-* rt-ac66u.txt - firmwalker输出文件
-* xc.txt - Ubiquiti设备的firmwalker输出文件
+![firmwalker.txt](https://github.com/Lumine2024/firmwalker_zh_hans/blob/master/firmwalker.txt)
+
+上述是使用g++编译C++版本的脚本后跑的![IoTGoat](https://github.com/OWASP/IoTGoat)，和使用原始脚本跑的结果基本一致，但完成了汉化工作
 
 ### 相关链接
 * https://craigsmith.net
