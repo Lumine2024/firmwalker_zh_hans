@@ -1,5 +1,5 @@
 # firmwalker
-一个简单的bash脚本（及其C++重写版），用于搜索提取或挂载的固件文件系统。
+一个简单的bash/C++脚本，用于搜索提取或挂载的固件文件系统。
 
 它将在提取或挂载的固件文件系统中搜索可能引发固件不安全问题的东西，例如：
 
@@ -18,12 +18,21 @@
 * 使用方法：
   * shell版：`./firmwalker linksys/fmk/rootfs ../firmwalker.txt`
   * c++版：（c++标准至少要在c++17，否则`filesystem`库没法用）
-    ```bat
-    g++ -std=c++23 firmwalker.cpp -o exec
-    ./exec linksys/fmk/rootfs ../firmwalker.txt
-    ```
-  * 第二个参数为可选项，默认为`firmwalker.txt`
-* 如果打不开，请执行`chmod +x firmwalker.sh`（或`chmod +x exec`）
+    * 直接编译源文件：
+      ```shell
+      g++ -std=c++23 firmwalker.cpp -o firmwalker
+      ./firmwalker linksys/fmk/rootfs ../firmwalker.txt
+      ```
+    * 使用CMake
+      ```shell
+      mkdir build
+      cd build
+      cmake ..
+      make
+      ./firmwalker linksys/fmk/rootfs ../firmwalker.txt
+      ```
+  * 跑可执行文件时，第二个参数为可选项，默认为`firmwalker.txt`
+* 如果打不开，请执行`chmod +x firmwalker.sh/firmwalker`（或`firmwalker`）
 * 除非你指定一个不同的文件名作为第二个参数，否则文件`firmwalker.txt`将被创建在与脚本文件相同的目录下
 * 不要把`firmwalker.sh`文件放在要搜索的目录中，这会导致脚本搜索自己和它正在创建的文件
 
