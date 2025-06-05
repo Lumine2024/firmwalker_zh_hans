@@ -6,11 +6,18 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <locale>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 using namespace std;
 namespace fs = std::filesystem;
 
 int main(int argc, char *argv[]) {
+#ifdef _WIN32
+	SetConsoleOutputCP(CP_UTF8);
+#endif
 	if(argc > 3 || argc < 2) {
 		cout << "使用方法\n" << argv[0] << " + 输入文件 + [可选：输出文件，默认firmwalker.txt]" << endl;
 		return 1;
@@ -40,7 +47,8 @@ int main(int argc, char *argv[]) {
 		in.close();
 		return ret;
 	};
-	msg("------------firmwalker---------------");
+	msg("------------firmwalker-------------");
+	msg("");
 	msg("***固件地址***");
 	msg(firmdir);
 	msg("****正在搜索密码文件***");
@@ -53,6 +61,27 @@ int main(int argc, char *argv[]) {
 			}
 		}
 		msg("");
+	}
+	msg("");
+	msg("***正在搜索Unix-MD5哈希***");
+	regex md5_regex(R"(\$1\$\w{8}\S{23})");
+	set<string> md5_set;
+	for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
+		if(!fs::is_regular_file(entry.path())) continue;
+		ifstream in(entry.path());
+		if(!in.is_open()) continue;
+		string line;
+		while(getline(in, line)) {
+			sregex_iterator it(line.begin(), line.end(), md5_regex);
+			sregex_iterator end;
+			for(; it != end; ++it) {
+				md5_set.insert(it->str());
+			}
+		}
+		in.close();
+	}
+	for(const auto &md5 : md5_set) {
+		msg(md5);
 	}
 	msg("");
 	// 跳过SSL相关文件
@@ -70,7 +99,7 @@ int main(int argc, char *argv[]) {
 	msg("");
 	msg("***正在搜索files文件夹***");
 	auto files = getArray("data/files");
-	for(auto &file : sshfiles) {
+	for(auto &file : files) {
 		msg("############################################# " + file);
 		for(auto &entry : fs::recursive_directory_iterator(firmdir)) {
 			if(entry.path().filename() == file) {
